@@ -62,7 +62,11 @@ class Auction
 
   def close_auction
     #close bidding
+    @items.each do |item|
+      item.close_bidding
+    end
     #sell items to attendees
+      #take winner from close_bid method, deduct item bid from their budget
     #return hash with items as keys, purchaser as values
     #only purchase items they can afford
     #wil purchase most expenssive first, etc.
