@@ -1,9 +1,10 @@
+require "date"
 class Auction
-  attr_reader :items
+  attr_reader :items, :date
   def initialize
     @items = []
+    @date = Date.today.strftime("%d/%m/%y")
   end
-
   def add_item(item)
     @items << item
   end
@@ -57,6 +58,15 @@ class Auction
       end
     end
     bidder_info
+  end
+
+  def close_auction
+    #close bidding
+    #sell items to attendees
+    #return hash with items as keys, purchaser as values
+    #only purchase items they can afford
+    #wil purchase most expenssive first, etc.
+    #if not enough money, next highest bidder will buy item
   end
     
 end

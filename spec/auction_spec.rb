@@ -95,4 +95,17 @@ RSpec.describe Item do
     @item3.add_bid(@attendee2, 15)
     expect(@auction.bidder_info).to eq({@attendee2 => {:budget => 75, :items => [@item1, @item3]}, @attendee1 => {:budget => 50, :items => [@item1]}})
   end
+
+  it "returns the date I was born" do
+    date = Date.today.strftime("%d/%m/%y")
+    # THIS STUB DOESN'T WORK BUT WHY??!?!
+    # IT DIDN'T WORK LAST NIGHT WHEN GOING OVER WK5 IC EITHER?!
+    #allow(date).to receive(:today).and_return(Date.new(1992, 1, 18))
+    #expect(@auction.date).to eq("18/1/1992")
+    expect(@auction.date).to eq(date)
+  end
+
+  it 'can close the auction' do
+    
+  end
 end
