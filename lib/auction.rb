@@ -28,4 +28,19 @@ class Auction
     end
     high_bid_only_array.compact.sum
   end
+
+  def bidders
+    bidder_names = []
+    @items.each do |item|
+      item.bids.keys.each do |k|
+        bidder_names << k.name
+      end
+    end
+    bidder_names.uniq
+  end
+
+  def bidder_info
+    #hash = { attendee => {:budget => value, :items => arrayofitemsateendeebidon}}
+  end
+
 end
