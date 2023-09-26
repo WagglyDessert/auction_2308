@@ -41,6 +41,22 @@ class Auction
 
   def bidder_info
     #hash = { attendee => {:budget => value, :items => arrayofitemsateendeebidon}}
+    #ADD to subhash items, others stay stagnant
+    bidder_info = Hash.new{|h,k| h[k] = Hash.new(0)}
+    @items.each do |item|
+      #items is what they have bid on
+      items = item
+      item.bids.keys.each do |k|
+        #attendee key thru item bids
+        k = k
+      #budget from attendee attribute
+        budget = k.budget.to_i
+        bidder_info[k][:budget] = budget
+        bidder_info[k][:items] = [item]
+        #require 'pry'; binding.pry
+      end
+    end
+    bidder_info
   end
-
+    
 end
